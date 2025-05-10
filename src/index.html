@@ -1,17 +1,39 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <link rel="stylesheet" href="node_modules/@xterm/xterm/css/xterm.css" />
-    <link href="./src/output.css" rel="stylesheet">
-    <script src="node_modules/@xterm/xterm/lib/xterm.js"></script>
+    <meta charset="UTF-*">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Tingey CV</title>
 </head>
 
-<body>
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-    </h1>
-    <div id="terminal" class="w-full h-96 border border-gray-300"></div>
+<body class="h-screen flex flex-col">
+    <nav class="h-16 flex justify-between items-center px-4 py-3 border-b font-mono sticky top-0 z-10 bg-gray-800">
+        <div class="flex items-center space-x-3">
+            <img src="./logo_white.png" alt="Logo" class="h-8 w-auto">
+            <span class="text-xl font-bold tracking-wide">Nathan Tingey</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm">
+            <a href="/about" class="transition-colors duration-200 px-2 py-1 rounded focus:outline-none focus:ring-2">about</a>
+            <a href="/experience" class="transition-colors duration-200 px-2 py-1 rounded focus:outline-none focus:ring-2">experience</a>
+            <a href="/projects" class="transition-colors duration-200 px-2 py-1 rounded focus:outline-none focus:ring-2">projects</a>
+            <a href="/contact" class="transition-colors duration-200 px-2 py-1 rounded focus:outline-none focus:ring-2">contact</a>
+        </div>
+        <div class="md:hidden flex items-center">
+            <button id="mobile-menu-btn" class="text-gray-300 hover focus:outline-none focus:ring-2 p-2 rounded">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden flex-col space-y-2 px-4 py-2 bg-gray-900/95 border-b border-gray-700 font-mono">
+        <a href="/about" class="block px-2 py-1 rounded">about</a>
+        <a href="/experience" class="block px-2 py-1 rounded">experience</a>
+        <a href="/projects" class="block px-2 py-1 rounded">projects</a>
+        <a href="/contact" class="block px-2 py-1 rounded">contact</a>
+    </div>
+    <div id="terminal" class="flex-1 w-full p-4 text-white font-mono"></div>
 </body>
 
 </html>

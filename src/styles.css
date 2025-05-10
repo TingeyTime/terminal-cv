@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    html,
+    body {
+        @apply h-full m-0;
+    }
+
+    body {
+        @apply text-white;
+        background-image: url('/public/background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        position: relative;
+    }
+
+    body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        /* dark overlay */
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    section {
+        @apply p-4 bg-gray-800 text-white;
+        position: relative;
+        z-index: 1;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+        color: #e0e0e0;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        letter-spacing: 0.05em;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.04em;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        letter-spacing: 0.03em;
+    }
+
+    p {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+        line-height: 1.7;
+    }
+
+    a {
+        font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+        color: #ffd600;
+        text-decoration: underline;
+        font-weight: bold;
+        transition: color 0.2s;
+    }
+
+    a:hover {
+        color: #ff9100;
+    }
+
+    #mobile-menu {
+        transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    nav {
+        border-bottom: 2px;
+        box-shadow: 0 2px 8px 0 #000a;
+    }
+
+    @media (max-width: 768px) {
+        #mobile-menu {
+            display: flex;
+        }
+    }
+
+}
